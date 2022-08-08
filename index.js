@@ -27,7 +27,6 @@ app.get('/execute', async (req, res) => {
     const recorder = new PuppeteerScreenRecorder(page);
     await recorder.start(SavePath);
     await page.goto(`http://localhost:${port}/content`);
-    await page.click('[aria-label="Alles akzeptieren"]');
 
     await page.waitForTimeout(10 * 1000);
     await recorder.stop();
